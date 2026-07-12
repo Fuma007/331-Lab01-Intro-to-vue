@@ -34,6 +34,13 @@ const productDisplay = {
     },
     setup(props, { emit }){
 
+        const shipping = computed(() => {
+        if (props.premium){
+            return 'Free'
+        } else {
+            return 30
+            }
+        })
 
         const product = ref('Boots')
         const brand = ref('SE 331')
@@ -66,9 +73,6 @@ const productDisplay = {
         const title = computed(() =>{
             return brand.value + ' ' + product.value
         })
-        function updateImage(variantImage){
-            image.value = variantImage
-        }
         return {
             title,
             image,
@@ -77,7 +81,6 @@ const productDisplay = {
             details,
             variants,
             addToCart,
-            updateImage,
             updateVariant,
             shipping
         }
