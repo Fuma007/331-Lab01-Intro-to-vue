@@ -27,7 +27,7 @@ const productDisplay = {
             :class="{disabledButton: !inStock}">Add To Cart</button>
             <button class="button" @click="removeFromCart">Remove Item</button>
         </div>
-         <review-list :reviews="reviews"></review-list>
+         <review-list v-if="reviews.length" :reviews="reviews"></review-list>
          <review-form @reivew-submitted="addReview"></review-form>
     </div>
 
