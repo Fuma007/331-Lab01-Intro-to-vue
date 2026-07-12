@@ -11,6 +11,8 @@ const reviewList = {
             <br/>
             "{{ review.review }}"
             <br/>
+            Recommend this product: {{ review.recommend }}
+            <br/>
         </li>
         </ul>
     </div>
