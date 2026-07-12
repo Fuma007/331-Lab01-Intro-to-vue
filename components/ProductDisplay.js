@@ -27,6 +27,7 @@ const productDisplay = {
             :class="{disabledButton: !inStock}">Add To Cart</button>
             <button class="button" @click="removeFromCart">Remove Item</button>
         </div>
+         <review-form></review-form>
     </div>
 
     `,
