@@ -32,14 +32,9 @@ const productDisplay = {
     props: {
         premium: Boolean
     },
-    setup(props) {
-        const shipping = computed(() => {
-            if (props.premium){
-                return 'Free'
-            } else {
-                return 30
-            }
-        })
+    setup(props, { emit }){
+
+
         const product = ref('Boots')
         const brand = ref('SE 331')
         // const image = ref('./assets/images/socks_green.jpg')
@@ -66,7 +61,7 @@ const productDisplay = {
             return variants.value[selectedVariant.value].quantity
         })
         function addToCart(){
-            cart.value +=1
+            emit('add-to-cart')
         }
         const title = computed(() =>{
             return brand.value + ' ' + product.value
