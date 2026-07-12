@@ -50,7 +50,8 @@ const reviewForm = {
                 form.recommend = null
             }
             return {
-                form
+                ...toRefs(form),
+                onSubmit
             }
         }
         
